@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMetro | Movilidad sostenible</title>
+    <meta name="description" content="EcoMetro promueve rutas de transporte sostenible y conciencia ambiental.">
+    
+    <link rel="stylesheet" href="css/estiloAword.css">
+    <link rel="icon" href="favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="imagenes/logo.jpg" alt="Logotipo de EcoMetro" width="120">
+        <h1>EcoMetro</h1>
+        <p>Muévete de forma inteligente, viaja de forma sostenible.</p>
+    </header>
+
+    <nav id="menu-principal" aria-label="Navegación principal">
+        <div class="contenedor-nav">
+            <a href="#" class="nav-tab active" data-target="catalogo">Inicio</a>
+            <a href="#" class="nav-tab" data-target="nosotros">Quiénes somos</a>
+            <a href="#" class="nav-tab" data-target="servicios">Servicios</a>
+            <a href="#" class="nav-tab" data-target="soluciones">Soluciones</a>
+            <a href="#" class="nav-tab" data-target="proyectos">Proyectos</a>
+            <a href="#" class="nav-tab" data-target="testimonios">Testimonios</a>
+            <a href="#" class="nav-tab" data-target="contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- SECCIÓN 1: CATÁLOGO DE HÁBITOS CON FILTRO Y PLAN -->
+        <section id="catalogo" class="vista-seccion active">
+            <h2>CATÁLOGO DE HÁBITOS</h2>
+
+            <div class="barra-catalogo">
+                <div class="grupo-filtros" role="group" aria-label="Filtrar hábitos por distancia">
+                    <button type="button" class="btn-filtro active" data-filtro="todos">Todos</button>
+                    <button type="button" class="btn-filtro" data-filtro="corta">Distancias cortas</button>
+                    <button type="button" class="btn-filtro" data-filtro="larga">Viajes largos</button>
+                </div>
+
+                <div class="estado-plan" aria-live="polite">
+                    <span id="contador-plan">Mi plan sostenible: <strong>0</strong> hábito(s)</span>
+                    <button type="button" id="btn-limpiar-plan" class="btn-secundario" style="display: none;">Limpiar</button>
+                </div>
+            </div>
+
+            <article class="item-habito" data-categoria="larga">
+                <div class="bloque-info">
+                    <h2>Muévete por la ciudad</h2>
+                    <p>Descubre alternativas de transporte sostenible para tus recorridos diarios de larga distancia.</p>
+                    <button type="button" class="btn-plan" data-habito="Transporte público diario">+ Agregar a mi plan</button>
+                </div>
+                <div class="bloque">
+                    <img src="imagenes/metro.jpg" alt="Transporte público en la ciudad">
+                </div>
+            </article>
+
+            <article class="item-habito" data-categoria="corta">
+                <div class="bloque-info">
+                    <h2>Cuida el medioambiente</h2>
+                    <p>Conoce cómo usar bicicleta en trayectos cortos ayuda a reducir el impacto ambiental.</p>
+                    <button type="button" class="btn-plan" data-habito="Uso de bicicleta">+ Agregar a mi plan</button>
+                </div>
+                <div class="bloque inverso">
+                    <img src="imagenes/bicicleta.jpg" alt="Persona utilizando una bicicleta">
+                </div>
+            </article>
+
+            <article class="item-habito" data-categoria="corta">
+                <div class="bloque-info">
+                    <h2>Construyamos ciudades sostenibles</h2>
+                    <p>Promovemos caminar en distancias cercanas para desplazarnos mejor por la ciudad.</p>
+                    <button type="button" class="btn-plan" data-habito="Caminata urbana">+ Agregar a mi plan</button>
+                </div>
+                <div class="bloque">
+                    <img src="imagenes/ciudad.jpg" alt="Ciudad con espacios verdes">
+                </div>
+            </article>
+        </section>
+
+        <!-- SECCIÓN 2: QUIÉNES SOMOS -->
+        <section id="nosotros" class="vista-seccion">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos <strong>EcoMetro</strong>, un proyecto dedicado a promover la movilidad sostenible y el cuidado del medioambiente.</p>
+            <p>Buscamos fomentar hábitos responsables de transporte para construir ciudades más limpias y sostenibles.</p>
+        </section>
+
+        <!-- SECCIÓN 3: SERVICIOS CON ACCIONES DIRECTAS -->
+        <section id="servicios" class="vista-seccion">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos información y alternativas para mejorar la movilidad urbana de manera sostenible:</p>
+            <div class="grilla-servicios">
+                <div class="caja-servicio">
+                    <div>
+                        <h3>🚌 Información sobre transporte público</h3>
+                        <p>Rutas, horarios y consejos para aprovechar la red pública masiva.</p>
+                    </div>
+                    <button type="button" class="btn-servicio" data-ir="soluciones" data-preseleccion="transporte">Calcular ahorro</button>
+                </div>
+                <div class="caja-servicio">
+                    <div>
+                        <h3>🚲 Promoción del uso de bicicletas</h3>
+                        <p>Guías e infraestructura segura para ciclistas urbanos.</p>
+                    </div>
+                    <button type="button" class="btn-servicio" data-ir="contacto" data-tema="Guías y ciclovías seguras">Solicitar asesoría</button>
+                </div>
+                <div class="caja-servicio">
+                    <div>
+                        <h3>🌱 Consejos para reducir la contaminación</h3>
+                        <p>Hábitos sencillos para disminuir las emisiones diarias de carbono.</p>
+                    </div>
+                    <button type="button" class="btn-servicio" data-ir="catalogo">Ver hábitos</button>
+                </div>
+                <div class="caja-servicio">
+                    <div>
+                        <h3>🚶 Orientación sobre movilidad sostenible</h3>
+                        <p>Asesoramiento para mejorar tus hábitos de desplazamiento diarios.</p>
+                    </div>
+                    <button type="button" class="btn-servicio" data-ir="contacto" data-tema="Orientación de movilidad">Consultar ahora</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: SOLUCIONES Y CALCULADORA DE IMPACTO -->
+        <section id="soluciones" class="vista-seccion">
+            <h2>Soluciones sostenibles</h2>
+
+            <div class="bloque-paso" id="problema">
+                <h3>1. Comprendamos el problema</h3>
+                <p>Actualmente, muchas ciudades enfrentan problemas de contaminación ambiental debido al uso excesivo de vehículos particulares.</p>
+                <p>El tráfico, las emisiones contaminantes y el consumo de combustible afectan la calidad del aire y el medioambiente.</p>
+                <img src="imagenes/problema.jpg" alt="Transporte urbano en la ciudad" class="img-problema">
+            </div>
+
+            <div class="bloque-paso" id="configurar-recorrido">
+                <h3>2. Ingresa los datos de tu recorrido</h3>
+                <p>Completa tu distancia diaria y frecuencia semanal para estimar tu ahorro de emisiones:</p>
+                <div class="grupo-inputs-simulador">
+                    <div class="campo-formulario">
+                        <label for="km-diarios">Kilómetros recorridos por día *</label>
+                        <input type="number" id="km-diarios" min="1" max="200" placeholder="Ej. 8">
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="dias-semana">Días a la semana *</label>
+                        <select id="dias-semana">
+                            <option value="">Selecciona los días...</option>
+                            <option value="1">1 día por semana</option>
+                            <option value="2">2 días por semana</option>
+                            <option value="3">3 días por semana</option>
+                            <option value="4">4 días por semana</option>
+                            <option value="5">5 días por semana</option>
+                            <option value="6">6 días por semana</option>
+                            <option value="7">7 días por semana</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paso-opciones">
+                <h3>3. Elige una acción sostenible</h3>
+                <p>¿Qué alternativa utilizarías para calcular tu impacto?</p>
+
+                <div class="contenedor-tarjetas">
+                    <article class="tarjeta" data-opcion="bicicleta">
+                        <h4>Usar bicicleta</h4>
+                        <img src="imagenes/usar-bici.jpg" alt="Persona utilizando una bicicleta">
+                        <p>Utilizar bicicleta permite desplazarte sin generar emisiones directas por combustible.</p>
+                        <button type="button" class="btn-elegir">Elegir bicicleta</button>
+                    </article>
+
+                    <article class="tarjeta" data-opcion="transporte">
+                        <h4>Utilizar transporte público</h4>
+                        <img src="imagenes/transporte.jpg" alt="Transporte público">
+                        <p>Compartir el transporte ayuda a disminuir la cantidad de vehículos particulares en las calles.</p>
+                        <button type="button" class="btn-elegir">Elegir transporte público</button>
+                    </article>
+
+                    <article class="tarjeta" data-opcion="caminar">
+                        <h4>Caminar</h4>
+                        <img src="imagenes/ciudad.jpg" alt="Ciudad con espacios verdes">
+                        <p>Para distancias cortas, caminar es una alternativa saludable y sostenible.</p>
+                        <button type="button" class="btn-elegir">Elegir caminar</button>
+                    </article>
+                </div>
+            </div>
+
+            <div class="bloque-paso" id="resultado">
+                <h3>4. Observa el resultado</h3>
+                <div id="mensaje-resultado" aria-live="polite">
+                    <p><em>Ingresa tus kilómetros, selecciona los días y elige una opción del Paso 3 para evaluar el impacto de tu decisión.</em></p>
+                </div>
+                <button type="button" id="btn-reiniciar-calculo" class="btn-secundario" style="display: none; margin-top: 12px;">
+                    Reiniciar cálculo
+                </button>
+            </div>
+
+            <div class="bloque-paso" id="video">
+                <h3>Aprende más sobre movilidad sostenible</h3>
+                <p>Conoce la importancia de cuidar el medioambiente y elegir medios de transporte responsables.</p>
+
+                <div class="contenedor-video">
+                    <iframe 
+                        src="https://www.youtube.com/embed/BxLPvQ6cZOk?rel=0" 
+                        title="Video sobre movilidad sostenible"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: PROYECTOS -->
+        <section id="proyectos" class="vista-seccion">
+            <h2>Proyectos</h2>
+            <p>Desarrollamos iniciativas que buscan mejorar la movilidad y promover el cuidado ambiental.</p>
+            <ul>
+                <li>Campañas de transporte sostenible.</li>
+                <li>Promoción de espacios para ciclistas.</li>
+                <li>Concientización sobre el medioambiente.</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 6: TESTIMONIOS -->
+        <section id="testimonios" class="vista-seccion">
+            <h2>Testimonios</h2>
+            <blockquote>"Utilizar medios de transporte sostenibles ayuda a cuidar nuestro planeta."</blockquote>
+            <blockquote>"Pequeñas decisiones pueden generar grandes cambios en nuestra ciudad."</blockquote>
+        </section>
+
+        <!-- SECCIÓN 7: CONTACTO INTERACTIVO -->
+        <section id="contacto" class="vista-seccion">
+            <h2>Contacto y Asesoría</h2>
+            <p>¿Quieres conocer más sobre EcoMetro o recibir orientación? Completa el formulario:</p>
+
+            <form id="form-contacto" class="formulario-contacto" novalidate>
+                <div class="campo-formulario">
+                    <label for="contacto-nombre">Nombre completo *</label>
+                    <input type="text" id="contacto-nombre" placeholder="Ej. Ana Torres" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-correo">Correo electrónico *</label>
+                    <input type="email" id="contacto-correo" placeholder="ana@ejemplo.com" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-tema">Tema de interés *</label>
+                    <select id="contacto-tema" required>
+                        <option value="">Selecciona un tema...</option>
+                        <option value="Guías y ciclovías seguras">Guías y ciclovías seguras</option>
+                        <option value="Rutas de transporte público">Rutas de transporte público</option>
+                        <option value="Orientación de movilidad">Orientación de movilidad</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="contacto-mensaje">Mensaje o distrito *</label>
+                    <textarea id="contacto-mensaje" rows="4" placeholder="Indica tu consulta o distrito de recorrido..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-elegir">Enviar consulta</button>
+            </form>
+
+            <div id="feedback-contacto" aria-live="polite" style="margin-top: 15px;"></div>
+            <p style="margin-top: 20px;">Correo directo: <a href="mailto:contacto@ecometro.com">contacto@ecometro.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>EcoMetro</strong> - Movilidad sostenible</p>
+        <p>Muévete de forma inteligente, viaja de forma sostenible.</p>
+    </footer>
+</body>
+</html>
